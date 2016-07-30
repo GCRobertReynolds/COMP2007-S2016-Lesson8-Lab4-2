@@ -18,6 +18,7 @@ namespace COMP2007_S2016_Lesson8_Lab4_2.Controllers
         // GET: Enrollments
         public async Task<ActionResult> Index()
         {
+            ViewBag.SubTitle = "Enrollments List";
             var enrollments = db.Enrollments.Include(e => e.Cours).Include(e => e.Student);
             return View(await enrollments.ToListAsync());
         }
