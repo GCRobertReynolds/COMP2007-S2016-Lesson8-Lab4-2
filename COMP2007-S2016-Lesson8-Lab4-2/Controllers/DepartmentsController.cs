@@ -18,6 +18,7 @@ namespace COMP2007_S2016_Lesson8_Lab4_2.Controllers
         // GET: Departments
         public async Task<ActionResult> Index()
         {
+            ViewBag.SubTitle = "Departments";
             return View(await db.Departments.ToListAsync());
         }
 
